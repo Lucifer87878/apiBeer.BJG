@@ -9,10 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 const img_wrap = document.querySelector(".img-wrap");
 const BeerName = document.querySelector(".Beer-Name");
-function ShowInfo(data) {
-    console.log(data);
+function ShowInfo() {
+    window.open("beer-page.html");
 }
 const beerURL = "https://api.punkapi.com/v2/beers/random";
+let arr = [];
 function getBeer() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -20,23 +21,26 @@ function getBeer() {
             console.log(response);
             if (response.status === 200) {
                 const data = yield response.json();
-                ShowInfo(data);
-                console.log(data);
-                data.forEach(element => {
-                    console.log(element.name);
-                    let img = document.createElement("img");
-                    img.setAttribute("src", element.image_url);
-                    img_wrap.appendChild(img);
-                    BeerName.innerHTML = element.name;
-                });
+                arr.push(data);
             }
-            else {
-                throw Error('Något gick fel, försök igen senare');
-            }
+            ;
         }
-        catch (error) {
-            console.log(error);
+        finally { }
+        {
+            throw Error('Något gick fel, försök igen senare');
         }
     });
 }
+try { }
+catch (error) {
+    console.log(error);
+}
 getBeer();
+/*
+                data.forEach(element => {
+                console.log(element.name);
+                let img = document.createElement("img");
+                img.setAttribute("src", element.image_url);
+                img_wrap.appendChild(img);
+                BeerName.innerHTML = element.name;
+*/ 
