@@ -1,17 +1,24 @@
 interface Exempel {
-    age: number,
-    breed: string,
-    chipNumber: string,
-    img: string,
+    id: number,
     name: string,
-    owner: Owner,
-    present: boolean,
-    sex: string
+    tagline: string,
+    image: string,
+    description: string,
+    hops: string,
+    AlcoholByVolume: string,
+    VolumeABV: number,
+    Ingredients:string,
+    FoodPairing:string,
+    BrewersTips:string,
+
+
 }
+
+const beerURL ="https://api.punkapi.com/v2/beers/random";
 
 async function getBeer() {
     try {
-        const response = await fetch('beerURL');
+        const response = await fetch(beerURL);
         console.log(response);
         if (response.status === 200) {
             const data: Exempel[] = await response.json();

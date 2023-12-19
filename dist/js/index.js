@@ -7,10 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+const beerURL = "https://api.punkapi.com/v2/beers/random";
 function getBeer() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield fetch('beerURL');
+            const response = yield fetch(beerURL);
             console.log(response);
             if (response.status === 200) {
                 const data = yield response.json();
