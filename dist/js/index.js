@@ -37,9 +37,9 @@ function showRandomBeer() {
             let description = document.createElement("p");
             description.innerText = element.description;
             SeeMoreWrap.append(description);
-            let hops = document.createElement("p");
-            hops.innerText = element.hops;
-            SeeMoreWrap.append(hops);
+            // let hops = document.createElement("p");
+            // hops.innerText = element.hops;
+            // SeeMoreWrap.append(hops)
             let abv = document.createElement("p");
             abv.innerText = element.abv.toString();
             SeeMoreWrap.append(abv);
@@ -55,6 +55,16 @@ function showRandomBeer() {
             let brewersTips = document.createElement("p");
             brewersTips.innerText = element.brewersTips;
             SeeMoreWrap.append(brewersTips);
+            // // Anta att element.hops är en array, t.ex. ["Hop1", "Hop2", "Hop3"]
+            // let hopsArray = element.hops;
+            // // Omvandla arrayen till en sträng med kommaseparerade värden
+            // let hopsString = hopsArray.join(', ');
+            // // Skapa ett nytt <p> element
+            // let hops = document.createElement("p");
+            // // Tilldela strängen till innerText
+            // hops.innerText = hopsString;
+            // // Lägg till <p> elementet till din DOM
+            // SeeMoreWrap.append(hops);
         });
     });
 }
