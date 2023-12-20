@@ -37,6 +37,24 @@ function showRandomBeer() {
             let description = document.createElement("p");
             description.innerText = element.description;
             SeeMoreWrap.append(description);
+            let hops = document.createElement("p");
+            hops.innerText = element.hops;
+            SeeMoreWrap.append(hops);
+            let abv = document.createElement("p");
+            abv.innerText = element.abv.toString();
+            SeeMoreWrap.append(abv);
+            let volume = document.createElement("p");
+            volume.innerText = element.volume.toString();
+            SeeMoreWrap.append(volume);
+            let ingredients = document.createElement("p");
+            ingredients.innerText = element.ingredients;
+            SeeMoreWrap.append(ingredients);
+            let foodPairing = document.createElement("p");
+            foodPairing.innerText = element.foodPairing;
+            SeeMoreWrap.append(foodPairing);
+            let brewersTips = document.createElement("p");
+            brewersTips.innerText = element.brewersTips;
+            SeeMoreWrap.append(brewersTips);
         });
     });
 }
