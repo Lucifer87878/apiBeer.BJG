@@ -22,8 +22,7 @@ function getBeer() {
 ;
 const img_wrap = document.querySelector(".img-wrap");
 const BeerName = document.querySelector(".Beer-Name");
-const BpImgWrap = document.querySelector(".bp__img-wrap");
-const BpTxtWrap = document.querySelector(".bp__txt-wrap");
+const SeeMoreWrap = document.querySelector(".see-more-wrap");
 const BeerBtn = document.querySelector(".beer__btn");
 function showRandomBeer() {
     randomBeerData.forEach(element => {
@@ -31,9 +30,14 @@ function showRandomBeer() {
         img.setAttribute("src", element.image_url);
         img_wrap.appendChild(img);
         BeerName.innerHTML = element.name;
-        let BpImg = document.createElement("img");
-        BpImg.setAttribute("src", element.image_url);
-        BpImgWrap.appendChild(BpImg);
+        BeerBtn.addEventListener('click', () => {
+            let tagline = document.createElement("p");
+            tagline.innerText = element.tagline;
+            SeeMoreWrap.append(tagline);
+            let description = document.createElement("p");
+            description.innerText = element.description;
+            SeeMoreWrap.append(description);
+        });
     });
 }
 // async function getBeer() {
@@ -56,4 +60,5 @@ getBeer();
                 img.setAttribute("src", element.image_url);
                 img_wrap.appendChild(img);
                 BeerName.innerHTML = element.name;
-*/ 
+*/
+// test
