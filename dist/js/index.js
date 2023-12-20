@@ -7,34 +7,47 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const img_wrap = document.querySelector(".img-wrap");
-const BeerName = document.querySelector(".Beer-Name");
 function ShowInfo() {
     window.open("beer-page.html");
 }
 const beerURL = "https://api.punkapi.com/v2/beers/random";
-let arr = [];
+let randomBeerData = [];
 function getBeer() {
     return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const response = yield fetch(beerURL);
-            console.log(response);
-            if (response.status === 200) {
-                const data = yield response.json();
-                arr.push(data);
-            }
-            ;
-        }
-        finally { }
-        {
-            throw Error('Något gick fel, försök igen senare');
-        }
+        let response = yield fetch(beerURL);
+        randomBeerData = yield response.json();
+        showRandomBeer();
     });
 }
-try { }
-catch (error) {
-    console.log(error);
+;
+const img_wrap = document.querySelector(".img-wrap");
+const BeerName = document.querySelector(".Beer-Name");
+const BpImgWrap = document.querySelector(".bp__img-wrap");
+const BpTxtWrap = document.querySelector(".bp__txt-wrap");
+const BeerBtn = document.querySelector(".beer__btn");
+function showRandomBeer() {
+    randomBeerData.forEach(element => {
+        let img = document.createElement("img");
+        img.setAttribute("src", element.image_url);
+        img_wrap.appendChild(img);
+        BeerName.innerHTML = element.name;
+        let BpImg = document.createElement("img");
+        BpImg.setAttribute("src", element.image_url);
+        BpImgWrap.appendChild(BpImg);
+    });
 }
+// async function getBeer() {
+//     try 
+//     {
+//         const response = await fetch(beerURL);
+//         console.log(response);
+//         if (response.status === 200) {
+//             randomBeerData = await response.json();
+//             };
+//     } catch (error) {
+//         console.log('Error fetching data:', error.message);
+//     }
+// }
 getBeer();
 /*
                 data.forEach(element => {
