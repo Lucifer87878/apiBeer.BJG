@@ -74,3 +74,5 @@ getBeer();
                 img_wrap.appendChild(img);
                 BeerName.innerHTML = element.name;
 */
+
+// test
