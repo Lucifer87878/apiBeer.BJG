@@ -40,7 +40,6 @@ function showRandomBeer() {
     img.setAttribute("src", randomBeerData.image_url);
     img_wrap.appendChild(img);
     BeerName.innerHTML = randomBeerData.name;
-    // Större text för ölnamnet
     let beerNameHeader = document.createElement("h1");
     beerNameHeader.innerText = randomBeerData.name;
     SeeMoreWrap.appendChild(beerNameHeader);
