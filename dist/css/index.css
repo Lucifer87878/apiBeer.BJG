@@ -47,3 +47,7 @@ body
 .see-more-wrap > p {
     color: #fff;
 }
+
+.hidden {
+    display: none;
+}

@@ -11,8 +11,10 @@ const beerURL = "https://api.punkapi.com/v2/beers/random";
 let randomBeerData = {};
 const img_wrap = document.querySelector(".img-wrap");
 const BeerName = document.querySelector(".Beer-Name");
-const SeeMoreWrap = document.querySelector(".see-more-wrap");
+const BeerBox = document.querySelector(".Beer-box");
+const SeeMoreWrap = document.querySelector(".modal");
 const BeerBtn = document.querySelector(".beer__btn");
+const BtnMoreInfo = document.querySelector(".btn-more-info");
 function getBeer() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -29,6 +31,8 @@ function getBeer() {
     });
 }
 function showRandomBeer() {
+    //hide modal
+    SeeMoreWrap.classList.add("hidden");
     // Clear previous content
     SeeMoreWrap.innerHTML = '';
     // Remove previous image if exists
@@ -71,3 +75,8 @@ function showRandomBeer() {
 }
 BeerBtn.addEventListener('click', getBeer);
 getBeer();
+// Hantera modal
+BtnMoreInfo.addEventListener("click", () => {
+    SeeMoreWrap.classList.remove("hidden");
+    BeerBox.classList.add("hidden");
+});

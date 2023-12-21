@@ -37,8 +37,10 @@ let randomBeerData: Partial<BeerData> = {};
 
 const img_wrap = document.querySelector(".img-wrap") as HTMLElement;
 const BeerName = document.querySelector(".Beer-Name") as HTMLElement;
-const SeeMoreWrap = document.querySelector(".see-more-wrap") as HTMLElement;
+const BeerBox = document.querySelector(".Beer-box") as HTMLElement;
+const SeeMoreWrap = document.querySelector(".modal") as HTMLElement;
 const BeerBtn = document.querySelector(".beer__btn") as HTMLElement;
+const BtnMoreInfo = document.querySelector(".btn-more-info") as HTMLElement;
 
 async function getBeer() {
     try {
@@ -54,6 +56,9 @@ async function getBeer() {
 }
 
 function showRandomBeer() {
+    //hide modal
+    SeeMoreWrap.classList.add("hidden");
+
     // Clear previous content
     SeeMoreWrap.innerHTML = '';
     
@@ -108,3 +113,10 @@ function showRandomBeer() {
 BeerBtn.addEventListener('click', getBeer);
 
 getBeer();
+
+// Hantera modal
+
+BtnMoreInfo.addEventListener("click", () => {
+    SeeMoreWrap.classList.remove("hidden");
+    BeerBox.classList.add("hidden");
+})
