@@ -37,9 +37,9 @@ function showRandomBeer() {
             let description = document.createElement("p");
             description.innerText = element.description;
             SeeMoreWrap.append(description);
-            // let hops = document.createElement("p");
-            // hops.innerText = element.hops;
-            // SeeMoreWrap.append(hops)
+            let hops = document.createElement("p");
+            hops.innerText = element.hops;
+            SeeMoreWrap.append(hops);
             let abv = document.createElement("p");
             abv.innerText = element.abv.toString();
             SeeMoreWrap.append(abv);

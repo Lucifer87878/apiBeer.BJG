@@ -43,3 +43,7 @@ body
     align-items: center;
     margin-bottom: 1rem;
 }
+
+.see-more-wrap > p {
+    color: #fff;
+}
