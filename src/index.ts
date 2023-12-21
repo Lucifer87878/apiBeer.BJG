@@ -40,7 +40,7 @@ const BeerName = document.querySelector(".Beer-Name") as HTMLElement;
 const BeerBox = document.querySelector(".Beer-box") as HTMLElement;
 const SeeMoreWrap = document.querySelector(".modal") as HTMLElement;
 const ModalImgWrap = document.querySelector(".modal-img-wrap") as HTMLElement;
-const ModalBeerName = document.querySelector(".modal-beer-name") as HTMLElement;
+let modalImg = document.querySelector('.modal-img'); // Select the modal image element
 // Knappar
 const BeerBtn = document.querySelector(".beer__btn") as HTMLElement;
 const BtnMoreInfo = document.querySelector(".btn-more-info") as HTMLElement;
@@ -73,14 +73,17 @@ function showRandomBeer() {
 
     let img = document.createElement("img");
     img.setAttribute("src", randomBeerData.image_url);
-    img_wrap.appendChild(img);
-    // BeerName.innerHTML = randomBeerData.name;
+    img_wrap.appendChild(img); 
+
+    let modalImg = document.createElement("img")
+    modalImg.setAttribute("src", randomBeerData.image_url);
+    SeeMoreWrap.appendChild(modalImg);
+
+    BeerName.innerHTML = randomBeerData.name; 
     
-    // Varför funkar det här på kortet men inte i modalen?
-    let beerTitle = randomBeerData.name;
-    BeerName.innerHTML = beerTitle;
-    ModalBeerName.innerHTML = beerTitle;
-    
+    let beerNameHeader = document.createElement("h1");
+    beerNameHeader.innerText = randomBeerData.name;
+    SeeMoreWrap.appendChild(beerNameHeader);     
 
     let tagline = document.createElement("p");
     tagline.innerText = randomBeerData.tagline;
