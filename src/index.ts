@@ -37,8 +37,13 @@ let randomBeerData: Partial<BeerData> = {};
 
 const img_wrap = document.querySelector(".img-wrap") as HTMLElement;
 const BeerName = document.querySelector(".Beer-Name") as HTMLElement;
-const SeeMoreWrap = document.querySelector(".see-more-wrap") as HTMLElement;
+const BeerBox = document.querySelector(".Beer-box") as HTMLElement;
+const SeeMoreWrap = document.querySelector(".modal") as HTMLElement;
+const ModalImgWrap = document.querySelector(".modal-img-wrap") as HTMLElement;
+let modalImg = document.querySelector('.modal-img'); // Select the modal image element
+// Knappar
 const BeerBtn = document.querySelector(".beer__btn") as HTMLElement;
+const BtnMoreInfo = document.querySelector(".btn-more-info") as HTMLElement;
 
 async function getBeer() {
     try {
@@ -54,6 +59,9 @@ async function getBeer() {
 }
 
 function showRandomBeer() {
+    //hide modal
+    SeeMoreWrap.classList.add("hidden");
+
     // Clear previous content
     SeeMoreWrap.innerHTML = '';
     
@@ -65,12 +73,17 @@ function showRandomBeer() {
 
     let img = document.createElement("img");
     img.setAttribute("src", randomBeerData.image_url);
-    img_wrap.appendChild(img);
-    BeerName.innerHTML = randomBeerData.name;   
+    img_wrap.appendChild(img); 
 
+    let modalImg = document.createElement("img")
+    modalImg.setAttribute("src", randomBeerData.image_url);
+    SeeMoreWrap.appendChild(modalImg);
+
+    BeerName.innerHTML = randomBeerData.name; 
+    
     let beerNameHeader = document.createElement("h1");
     beerNameHeader.innerText = randomBeerData.name;
-    SeeMoreWrap.appendChild(beerNameHeader);
+    SeeMoreWrap.appendChild(beerNameHeader);     
 
     let tagline = document.createElement("p");
     tagline.innerText = randomBeerData.tagline;
@@ -112,3 +125,10 @@ function showRandomBeer() {
 BeerBtn.addEventListener('click', getBeer);
 
 getBeer();
+
+// Hantera modal
+
+BtnMoreInfo.addEventListener("click", () => {
+    SeeMoreWrap.classList.remove("hidden");
+    BeerBox.classList.add("hidden");
+})
