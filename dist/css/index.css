@@ -24,9 +24,9 @@ body
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    border: 3px solid black;
+    border: 5px solid rgb(255, 15, 15);
     border-radius: 13%;
-    box-shadow: 5px 5px 5px rgb(179, 3, 176);
+    box-shadow: 8px 8px 8px rgb(138, 43, 226);
 }
 
 .Beer-box img
@@ -46,4 +46,17 @@ body
 
 .see-more-wrap > p {
     color: #fff;
+}
+
+.see-more-wrap > h1 {
+    color: blueviolet;
+}
+
+.beer__btn {
+    border-radius: 45%;
+    color: #fff;
+    border: 2px solid rgb(255, 15, 15);
+    background-color: blueviolet;
+    padding: 0.4rem;
+    cursor: pointer;
 }
