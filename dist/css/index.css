@@ -26,7 +26,7 @@ body
     padding: 2rem;
     border: 3px solid black;
     border-radius: 13%;
-    box-shadow: 5px 5px 5px red;
+    box-shadow: 5px 5px 5px rgb(179, 3, 176);
 }
 
 .Beer-box img
