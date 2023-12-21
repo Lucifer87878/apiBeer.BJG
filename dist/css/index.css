@@ -44,11 +44,11 @@ body
     margin-bottom: 1rem;
 }
 
-.see-more-wrap > p {
-    color: #fff;
+.see-more-wrap, .modal > p {
+    color: #280202;
 }
 
-.see-more-wrap > h1 {
+.see-more-wrap, .modal > h1 {
     color: blueviolet;
 }
 
